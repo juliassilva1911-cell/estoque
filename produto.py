@@ -16,3 +16,24 @@ class Produto:
             "tipo": self.tipo,
             "situacao": self.situacao(),
         }
+
+    def situacao(self): 
+            if self.quantidade == 0:
+                return "Em falta"
+            elif self.quantidade <= 1:
+                return "repor"
+            else:
+                return "ok"
+
+    def entrada(self, qtd):
+        self.quantidade = (self.quantidade + qtd)
+
+
+    def saida(self,qtd):
+        if qtd <= self.quantidade:
+            self.quantidade = (self.quantidade - qtd)
+            return True
+        return False
+      
+
+
